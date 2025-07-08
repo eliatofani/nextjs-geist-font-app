@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<h2>{{ title }}</h2>
+<form method="POST" action="" novalidate>
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    {{ form.name.label(class="form-label") }}
+    {{ form.name(class="form-control") }}
+    {% for error in form.name.errors %}
+      <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+  </div>
+  <div class="mb-3">
+    {{ form.year.label(class="form-label") }}
+    {{ form.year(class="form-control") }}
+    {% for error in form.year.errors %}
+      <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+  </div>
+  <div class="mb-3">
+    {{ form.type.label(class="form-label") }}
+    {{ form.type(class="form-control") }}
+    {% for error in form.type.errors %}
+      <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+  </div>
+  <div class="mb-3">
+    {{ form.region.label(class="form-label") }}
+    {{ form.region(class="form-control") }}
+    {% for error in form.region.errors %}
+      <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+  </div>
+  <div class="mb-3">
+    {{ form.alcohol.label(class="form-label") }}
+    {{ form.alcohol(class="form-control") }}
+    {% for error in form.alcohol.errors %}
+      <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+  </div>
+  <div class="mb-3">
+    {{ form.price.label(class="form-label") }}
+    {{ form.price(class="form-control") }}
+    {% for error in form.price.errors %}
+      <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+  </div>
+  <div class="mb-3">
+    {{ form.producer.label(class="form-label") }}
+    {{ form.producer(class="form-control") }}
+    {% for error in form.producer.errors %}
+      <div class="text-danger">{{ error }}</div>
+    {% endfor %}
+  </div>
+  <button type="submit" class="btn btn-primary">{{ title }}</button>
+  <a href="{{ url_for('wine_catalog') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
